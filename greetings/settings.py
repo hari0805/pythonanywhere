@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2c+*e&u4!jzb*1fq2a_$29*_+&_udlcct6$zmeifx5q&)!rl*i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -141,16 +141,44 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # EMAIL_USE_TLS = False
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtpout.secureserver.net'
-EMAIL_HOST_USER = 'hariharan@kratosolutions.com'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = 'Haris@123'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_USE_TLS = False
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtpout.secureserver.net'
+# EMAIL_HOST_USER = 'hariharan@kratosolutions.com'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_HOST_PASSWORD = 'Haris@123'
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = False
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
 WHITENOISE_USE_FINDERS = True
+
+
+# Sendgrid Configuration
+
+# SENDGRID_API_KEY = os.getenv('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')
+
+# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = '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'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'sendgrid.backends.SendgridBackend'
+# DEFAULT_FROM_EMAIL = 'sk.haro0805@gmail.com'
+
+SENDGRID_API_KEY = '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'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# SENDGRID_SENDBOX_MODE_IN_DEBUG = False
+
+# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'

@@ -6,15 +6,19 @@ from django.urls import re_path as url
 
 urlpatterns = [
     path('', home, name='home'),
-    path('send', multimail1, name="mailsend"),
+    path('send', multimail2, name="mailsend"),
     path('thanks', greet, name="greet"),
     
     # url(r'^image_load/$', image_load, name='image_load'),
-    path('image_load/', image_load, name='image_load'),
+    url(r'^Opened/\w+|[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+$/', Opened, name='Opened'),
 
-    # path('send/render_image/',render_image, name='render_image'),
-    # path('send/', SendTemplateMailView.as_view(), name=    'send_template'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+#_(\w+|[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})
+
+# r'^users/\w+|[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+$/'
+
+# (?P<data>\w+|[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/$

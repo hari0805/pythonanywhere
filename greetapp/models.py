@@ -6,8 +6,8 @@ from django.db.models.fields import CharField, EmailField, UUIDField
 class mymodel(models.Model):
     file = models.FileField(upload_to='media')
 
-# class UserModel(models.Model):
-#      email = EmailField(max_length = 254 , blank= True , null=True)
-#      status = models.BooleanField(default=False)
-#      def __str__(self):
-#          return self.email
+class UserModel(models.Model):
+     email = EmailField(max_length = 254 , blank= True , null=True)
+     status = models.BooleanField(default=False)
+     def __str__(self):
+         return self.email
